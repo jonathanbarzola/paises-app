@@ -26,9 +26,15 @@ export class PaisService {
     return this.http.get<Country[]>(url);
   }
 
-  getPaisPorAlpha( termino: string ): Observable<Country[]> {
+  getPaisPorAlpha( id: string ): Observable<Country[]> {
 
-    const url = `${this.apiUrl}/alpha/${termino}`;
+    const url = `${this.apiUrl}/alpha/${id}`;
+    return this.http.get<Country[]>(url);
+  }
+
+  buscarRegion( region: string ): Observable<Country[]> {
+    
+    const url = `${this.apiUrl}/region/${region}`
     return this.http.get<Country[]>(url);
   }
 }
